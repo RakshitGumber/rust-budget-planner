@@ -1,0 +1,9 @@
+[package]
+name = "rust-webapp"
+version = "0.1.0"
+edition = "2024"
+authors = ["Rakshit Gumber <gumberrakshit@gmail.com>"]
+
+[dependencies.nickel]
+
+git = "https://github.com/nickel-org/nickel.rs.git"
