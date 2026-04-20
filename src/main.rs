@@ -6,7 +6,9 @@ async fn main() {
     .route("/", get(|| async { "Hello world!" }))
     .route("/ping", get(||async {"pong"}));
 
-    let listener = tokio::net::TcpListener::bind("127.0.0.1:3000").await.unwrap();
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:3000")
+    .await
+    .unwrap("Failed to bind");
     println!("Listening on http://127.0.0.1:3000");
     
     axum::serve(listener, app).await.unwrap();
