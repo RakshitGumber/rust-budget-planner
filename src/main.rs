@@ -1,5 +1,5 @@
 use chrono::Local;
-use std::fs::File;
+use std::fs::OpenOptions;
 use std::io::{self, Write};
 
 fn formatted_time_entry() -> String {
@@ -9,7 +9,10 @@ fn formatted_time_entry() -> String {
 }
 
 fn logger(filename: &str, string: &[u8]) -> io::Result<()> {
-    let mut f = File::create(filename)?;
+    let mut f = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(filename)?;
     f.write_all(string)?;
     Ok(())
 }
