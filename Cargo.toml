@@ -7,3 +7,4 @@ authors = ["Rakshit Gumber <gumberrakshit@gmail.com>"]
 [dependencies]
 axum = "0.8.9"
 tokio = { version = "1.52.1", features = ["full"] }
+chrono = { version = "0.4", features = ["serde"] }
